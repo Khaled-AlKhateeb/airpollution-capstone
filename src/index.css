@@ -10,21 +10,60 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Courier New',
     monospace;
 }
 
 .main-container {
   display: flex;
   flex-direction: column;
+}
+
+.nav-continer {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 100vw;
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+}
+
+.nav-title {
+  margin: 0;
+}
+
+.key-map {
+  display: flex;
+  width: 100vw;
+  justify-content: space-around;
+  padding: 0.5rem;
+  height: 2rem;
+}
+
+#Africa {
+  margin-top: 6rem;
 }
 
 .continent-container {
@@ -59,27 +98,43 @@ code {
   flex-direction: column;
 }
 
-.country-good {
+.km {
+  font-weight: 700;
+  padding: 0.1rem;
+  border-radius: 0.2rem;
+  width: 10%;
+}
+
+.country-btn {
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  font-weight: 700;
+  width: 100vw;
+  height: 4rem;
+}
+
+.good {
   background-color: var(--good-color);
   margin: 0;
 }
 
-.country-fair {
+.fair {
   background-color: var(--fair-color);
   margin: 0;
 }
 
-.country-moderate {
+.moderate {
   background-color: var(--moderate-color);
   margin: 0;
 }
 
-.country-poor {
+.poor {
   background-color: var(--poor-color);
   margin: 0;
 }
 
-.country-verypoor {
+.verypoor {
   background-color: var(--verypoor-color);
   margin: 0;
 }
@@ -89,5 +144,57 @@ code {
 }
 
 .info-country {
-  display: none;
+  visibility: hidden;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.info-country::after {
+  content: "";
+  position: absolute;
+}
+
+.show {
+  visibility: visible;
+  -webkit-animation: fadein 1s;
+  animation: fadeIn 1s;
+}
+
+.country-name {
+  margin: 3rem 0;
+}
+
+.components {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.component {
+  padding: 0.5rem 2rem;
+  text-align: start;
+  background-color: var(--text-color);
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.close-btn {
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  position: absolute;
 }

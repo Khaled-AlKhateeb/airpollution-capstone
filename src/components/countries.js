@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 const Countries = (props) => {
   const { countryName, aqi, onclick } = props;
   return (
-    <h2 className={aqi} onClick={onclick}>{countryName}</h2>
+    <button className={`country-btn ${aqi()}`} onClick={onclick} type="button">{countryName}</button>
   );
 };
 
 Countries.propTypes = {
   countryName: PropTypes.string.isRequired,
-  aqi: PropTypes.string.isRequired,
+  aqi: PropTypes.func.isRequired,
   onclick: PropTypes.func.isRequired,
 };
 

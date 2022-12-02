@@ -5,6 +5,7 @@ const Country = (props) => {
   const {
     countryName,
     id,
+    close,
     co,
     no,
     no2,
@@ -16,30 +17,66 @@ const Country = (props) => {
   } = props;
   return (
     <div className="info-country" id={id}>
-      {/* <img className="country-img" src={countryIcon} alt={countryName} /> */}
-      <h3 className="country-name">{countryName}</h3>
-      <span>
-        CO:
-        {co}
-        . NO:
-        {no}
-        . NO2:
-        {no2}
-        . O3:
-        {o3}
-        .
-      </span>
-      <span>
-        SO2:
-        {so2}
-        . PM2_5:
-        {pm2}
-        . PM10:
-        {pm10}
-        . NH3:
-        {nh3}
-        .
-      </span>
+      <button type="button" className="close-btn" onClick={close}>&#x3c;</button>
+      <h1 className="country-name">{countryName}</h1>
+      <div className="components">
+        <p className="component">
+          CO:&nbsp;
+          {co}
+&nbsp;
+          μg/m
+          <sup>3</sup>
+        </p>
+        <p className="component">
+          NO:&nbsp;
+          {no}
+&nbsp;
+          μg/m
+          <sup>3</sup>
+        </p>
+        <p className="component">
+          NO2:&nbsp;
+          {no2}
+&nbsp;
+          μg/m
+          <sup>3</sup>
+        </p>
+        <p className="component">
+          O3:&nbsp;
+          {o3}
+&nbsp;
+          μg/m
+          <sup>3</sup>
+        </p>
+        <p className="component">
+          SO2:&nbsp;
+          {so2}
+&nbsp;
+          μg/m
+          <sup>3</sup>
+        </p>
+        <p className="component">
+          PM2_5:&nbsp;
+          {pm2}
+&nbsp;
+          μg/m
+          <sup>3</sup>
+        </p>
+        <p className="component">
+          PM10:&nbsp;
+          {pm10}
+&nbsp;
+          μg/m
+          <sup>3</sup>
+        </p>
+        <p className="component">
+          NH3:&nbsp;
+          {nh3}
+&nbsp;
+          μg/m
+          <sup>3</sup>
+        </p>
+      </div>
     </div>
   );
 };
@@ -55,6 +92,7 @@ Country.propTypes = {
   pm10: PropTypes.number.isRequired,
   nh3: PropTypes.number.isRequired,
   id: PropTypes.string.isRequired,
+  close: PropTypes.func.isRequired,
 };
 
 export default Country;
