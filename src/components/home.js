@@ -1,44 +1,79 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
-import { loaded } from '../redux/airpollutionReducer';
+import { loaded, fetchStorage } from '../redux/airpollutionReducer';
 import Continent from './continent';
+import Countries from './countries';
 import Country from './country';
 
 function Home() {
   const continents = useSelector((state) => state.continent.continents);
   const dispatch = useDispatch();
-  useEffect(() => {
+  if (!localStorage.continentAirPollution) {
     dispatch(loaded());
-  }, []);
-  const handleClick = (id) => {
-    const element = document.getElementById(id);
-    const eleArr = element.parentElement.childNodes;
-    for (let i = 0; i < eleArr.length; i++) {
-      if (eleArr[i].id === id) {
-        eleArr[i].children[1].style.height = '100%';
+  } else {
+    dispatch(fetchStorage());
+  }
+
+  const handleClick = (e, name) => {
+    console.log(e.target);
+    const element = document.getElementById(name);
+    const eleArr = element.parentElement.children;
+    for (let i = 0; i < eleArr.length; i += 1) {
+      if (eleArr[i].id === name) {
+        if (eleArr[i].children[1].style.display === 'none') {
+          eleArr[i].children[1].style.display = 'flex';
+        } else {
+          eleArr[i].children[1].style.display = 'none';
+        }
       } else {
-        eleArr[i].children[1].style.height = 0;
+        eleArr[i].children[1].style.display = 'none';
       }
     }
   };
+
+  const handleItem = () => {
+
+  }
+
+  if (continents === undefined) {
+    return;
+  }
+  const good = 'country-good';
+  const fair = 'country-fair';
+  const moderate = 'country-moderate';
+  const poor = 'country-poor';
+  const verypoor = 'country-verypoor';
   return (
     <div className="main-container">
-      {continents.map((key) => {
-        const idName = uuidv4();
-        return (
-          <div key={Math.random()} id={idName}>
+      {continents.map((con) => (
+        <div key={Math.random()} id={con.continent}>
+          <div className="continent-container">
             <Continent
-              name={key.name}
-              icon={key.icon}
-              event={() => { handleClick(idName); }}
+              name={con.continent}
+              icon={con.continent}
+              event={(e) => { handleClick(e, con.continent); }}
             />
-            <div className="country-container" id={key.id}>
-              <Country />
-            </div>
           </div>
-        );
-      })}
+          <div className="countries-container">
+            {con.data.map((area) => (
+              <div key={Math.random()}>
+                <Countries
+                  countryName={area.name}
+                  aqi={area.aqi === 1 ? good
+                    : area.aqi === 2 ? fair
+                      : area.aqi === 3 ? moderate
+                        : area.aqi === 4 ? poor
+                          : verypoor}
+                  onclick={() => {handleItem()}}
+                />
+                <Country
+                  countryName={area.name}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

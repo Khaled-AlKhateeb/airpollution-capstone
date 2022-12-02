@@ -40,7 +40,7 @@ code {
 
 .continent-img {
   display: flex;
-  width: 50%;
+  width: 30%;
 }
 
 .info-container {
@@ -54,6 +54,40 @@ code {
   margin: 0;
 }
 
+.countries-container {
+  display: none;
+  flex-direction: column;
+}
+
+.country-good {
+  background-color: var(--good-color);
+  margin: 0;
+}
+
+.country-fair {
+  background-color: var(--fair-color);
+  margin: 0;
+}
+
+.country-moderate {
+  background-color: var(--moderate-color);
+  margin: 0;
+}
+
+.country-poor {
+  background-color: var(--poor-color);
+  margin: 0;
+}
+
+.country-verypoor {
+  background-color: var(--verypoor-color);
+  margin: 0;
+}
+
 .country-container {
-  height: 0;
+  display: none;
+}
+
+.info-country {
+  display: none;
 }
