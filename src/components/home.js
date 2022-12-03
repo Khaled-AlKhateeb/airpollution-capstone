@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loaded, fetchStorage, filterUIstore } from '../redux/airpollutionReducer';
 import Continent from './continent';
 import Countries from './countries';
-import Country from './country';
 
 function Home() {
   const filteredData = [];
@@ -30,22 +29,6 @@ function Home() {
         eleArr[i].children[1].style.display = 'none';
       }
     }
-  };
-
-  const handleItem = (id) => {
-    const ele = document.getElementById(id);
-    const root = document.getElementById('root');
-    ele.style.visibility = 'visible';
-    root.style.height = '100vh';
-    root.style.overflow = 'hidden';
-  };
-
-  const closeItem = (id) => {
-    const ele = document.getElementById(id);
-    const root = document.getElementById('root');
-    ele.style.visibility = 'hidden';
-    root.style.height = 'auto';
-    root.style.overflow = 'visible';
   };
 
   const filterUI = (aqi) => {
@@ -101,14 +84,10 @@ function Home() {
               <div key={Math.random()}>
                 <Countries
                   countryName={area.name}
+                  regionName={area.region}
                   aqi={() => renderSwitch(area.aqi)}
-                  onclick={() => { handleItem(area.id); }}
                   image={area.flag}
-                />
-                <Country
-                  countryName={area.name}
                   id={area.id}
-                  close={() => { closeItem(area.id); }}
                   co={area.components.co}
                   no={area.components.no}
                   no2={area.components.no2}

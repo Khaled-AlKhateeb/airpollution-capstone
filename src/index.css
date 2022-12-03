@@ -113,6 +113,10 @@ code {
   appearance: none;
 }
 
+.link {
+  text-decoration: none;
+}
+
 .country-btn {
   display: flex;
   gap: 0.3rem;
@@ -172,7 +176,6 @@ code {
 }
 
 .info-country {
-  visibility: hidden;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -201,7 +204,8 @@ code {
 
 .country-flag {
   flex: 1;
-  width: 3rem;
+  width: 2.5rem;
+  border-radius: 1rem;
 }
 
 .components {
