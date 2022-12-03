@@ -15,11 +15,11 @@ function Home() {
     }
   }, []);
   const continents = useSelector((state) => state.continent.continents);
-  const handleClick = (name) => {
-    const element = document.getElementById(name);
+  const handleClick = (id) => {
+    const element = document.getElementById(id);
     const eleArr = element.parentElement.children;
     for (let i = 1; i < eleArr.length; i += 1) {
-      if (eleArr[i].children[1].id === `${name}-continent`) {
+      if (eleArr[i].children[1].id === `${id}-continent`) {
         if (eleArr[i].children[1].style.display === 'none') {
           eleArr[i].children[1].style.display = 'flex';
         } else {
@@ -87,15 +87,6 @@ function Home() {
                   regionName={area.region}
                   aqi={() => renderSwitch(area.aqi)}
                   image={area.flag}
-                  id={area.id}
-                  co={area.components.co}
-                  no={area.components.no}
-                  no2={area.components.no2}
-                  o3={area.components.o3}
-                  so2={area.components.so2}
-                  pm2={area.components.pm2_5}
-                  pm10={area.components.pm10}
-                  nh3={area.components.nh3}
                 />
               </div>
             ))}

@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const Countries = ({ countryName, regionName, aqi, onclick, image}) => {
+const Countries = ({ countryName, regionName, aqi, image}) => {
   return (
-    <button className="country-btn" onClick={onclick} type="button">
+    <button className="country-btn" type="button">
       <h1 className="country-title">{countryName}</h1>
       <img src={image} alt={countryName} className="country-flag" />
       <div className={aqi()}>
@@ -20,7 +20,6 @@ Countries.propTypes = {
   countryName: PropTypes.string.isRequired,
   regionName: PropTypes.string.isRequired,
   aqi: PropTypes.func.isRequired,
-  onclick: PropTypes.func.isRequired,
   image: PropTypes.string.isRequired,
 };
 
