@@ -129,12 +129,6 @@ You can deploy this project using:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🔭 Future Features <a name="future-features"></a>
-
-- [ ] **[Add Search Feature]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
@@ -161,6 +155,6 @@ I would like to thank
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

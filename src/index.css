@@ -1,7 +1,7 @@
 :root {
-  --primary-color: #083c56;
+  --primary-color: #fb5092;
   --secondary-color: #0a5d86;
-  --background-color: #649dd3;
+  --background-color: #b13968;
   --text-color: #b6d5e1;
   --good-color: #66b033;
   --fair-color: #fffe34;
@@ -80,6 +80,7 @@ code {
   border-radius: 1rem;
   width: 70%;
   height: 20vh;
+  cursor: pointer;
   margin: auto;
 }
 
@@ -101,6 +102,7 @@ code {
 }
 
 .km {
+  cursor: pointer;
   font-weight: 700;
   padding: 0.1rem;
   border: none;
@@ -118,7 +120,7 @@ code {
 }
 
 .link-btn {
-  color: var(--primary-color);
+  color: var(--text-color);
   font-size: 1.2rem;
   font-weight: 500;
   background-color: var(--background-color);
@@ -149,7 +151,7 @@ code {
   outline: none;
   width: 50vw;
   margin: auto;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
 }
 
 .good,

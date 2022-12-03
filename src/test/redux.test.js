@@ -40,15 +40,6 @@ const data = [[{
 }],
 ];
 
-// country = {
-//  name: key.name,
-//  region: key.region,
-//  components: key.components,
-//  aqi: key.main.aqi,
-//  id: uuidv4(),
-//  flag: key.flags.png,
-// };
-
 const loadedFulfilled = {
   type: loaded.fulfilled,
   payload: data,
