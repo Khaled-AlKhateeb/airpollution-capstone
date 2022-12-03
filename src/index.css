@@ -1,13 +1,264 @@
+:root {
+  --primary-color: #fb5092;
+  --secondary-color: #0a5d86;
+  --background-color: #b13968;
+  --text-color: #b6d5e1;
+  --good-color: #66b033;
+  --fair-color: #fffe34;
+  --moderate-color: #fb9902;
+  --poor-color: #fd5308;
+  --verypoor-color: #fe2712;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: content-box;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Courier New',
     monospace;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: var(--background-color);
+}
+
+.nav-continer {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+}
+
+.nav-title {
+  margin: 0;
+}
+
+.key-map {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem;
+  height: 2rem;
+}
+
+#Africa {
+  margin-top: 7rem;
+}
+
+.continent-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 1rem;
+  width: 70%;
+  height: 20vh;
+  cursor: pointer;
+  margin: auto;
+}
+
+.continent-img {
+  display: flex;
+  width: 30%;
+}
+
+.continent-name,
+.continent-quality {
+  margin: 0;
+}
+
+.countries-container {
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.km {
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0.1rem;
+  border: none;
+  border-radius: 0.2rem;
+  width: 10%;
+  text-transform: uppercase;
+}
+
+.radio {
+  appearance: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link-btn {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: var(--background-color);
+  cursor: pointer;
+  border-radius: 1rem;
+  height: 100%;
+  padding: 0.5rem;
+}
+
+.flag-container {
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+  margin: 2rem auto;
+}
+
+.country-image {
+  max-width: 20rem;
+  border-radius: 2rem;
+}
+
+.country-btn {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  border: none;
+  border-radius: 1rem;
+  outline: none;
+  width: 50vw;
+  margin: auto;
+  background-color: var(--primary-color);
+}
+
+.good,
+.fair,
+.moderate,
+.poor,
+.verypoor {
+  height: 100%;
+  border-radius: 1rem;
+  flex: 1;
+}
+
+.nav-good,
+.good {
+  background-color: var(--good-color);
+}
+
+.nav-fair,
+.fair {
+  background-color: var(--fair-color);
+}
+
+.nav-moderate,
+.moderate {
+  background-color: var(--moderate-color);
+}
+
+.nav-poor,
+.poor {
+  background-color: var(--poor-color);
+}
+
+.nav-verypoor,
+.verypoor {
+  background-color: var(--verypoor-color);
+}
+
+.quality {
+  text-transform: uppercase;
+}
+
+.country-title {
+  flex: 2;
+}
+
+.country-container {
+  display: none;
+}
+
+.info-country {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.info-country::after {
+  content: "";
+  position: absolute;
+}
+
+.show {
+  visibility: visible;
+  -webkit-animation: fadein 1s;
+  animation: fadeIn 1s;
+}
+
+.country-name {
+  font-size: 4rem;
+  margin: 3rem 0;
+}
+
+.country-flag {
+  flex: 1;
+  width: 2.5rem;
+  border-radius: 1rem;
+}
+
+.components {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.component {
+  padding: 0.5rem 2rem;
+  text-align: start;
+  background-color: var(--text-color);
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.close-btn {
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  position: absolute;
 }
