@@ -22,9 +22,8 @@ test('Continent page should render correctly', () => {
     <Continent
       name="Africa"
       icon="Africa.png"
-      event={() => { handleClick("Africa"); }}
-    />
+      event={() => { handleClick('Africa'); }}
+    />,
   );
   expect(screen).toMatchSnapshot();
-})
-
+});

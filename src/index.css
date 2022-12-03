@@ -117,6 +117,29 @@ code {
   text-decoration: none;
 }
 
+.link-btn {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: var(--background-color);
+  cursor: pointer;
+  border-radius: 1rem;
+  height: 100%;
+  padding: 0.5rem;
+}
+
+.flag-container {
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+  margin: 2rem auto;
+}
+
+.country-image {
+  max-width: 20rem;
+  border-radius: 2rem;
+}
+
 .country-btn {
   display: flex;
   gap: 0.3rem;
@@ -138,6 +161,7 @@ code {
   border-radius: 1rem;
   flex: 1;
 }
+
 .nav-good,
 .good {
   background-color: var(--good-color);
@@ -199,6 +223,7 @@ code {
 }
 
 .country-name {
+  font-size: 4rem;
   margin: 3rem 0;
 }
 

@@ -71,5 +71,5 @@ const continentSlice = createSlice({
   },
 });
 
-export const { fetchStorage, filterUIstore, countryDetails } = continentSlice.actions;
+export const { fetchStorage, filterUIstore } = continentSlice.actions;
 export default continentSlice.reducer;

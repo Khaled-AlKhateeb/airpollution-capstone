@@ -11,7 +11,10 @@ const Country = () => {
   return (
     <div className="info-country" id={country[0].id}>
       <button type="button" className="close-btn" onClick={() => navigate(-1)}>&#x3c;</button>
-      <h1 className="country-name">{country[0].name}</h1>
+      <div className="flag-container">
+        <h1 className="country-name">{country[0].name}</h1>
+        <img className="country-image" src={country[0].flag} alt={country[0].name} />
+      </div>
       <div className="components">
         <p className="component">
           CO:&nbsp;

@@ -13,7 +13,7 @@ function Home() {
     } else {
       dispatch(fetchStorage());
     }
-  }, []);
+  }, [dispatch]);
   const continents = useSelector((state) => state.continent.continents);
   const handleClick = (id) => {
     const element = document.getElementById(id);
