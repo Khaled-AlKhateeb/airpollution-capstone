@@ -1,5 +1,7 @@
 :root {
   --primary-color: #083c56;
+  --secondary-color: #0a5d86;
+  --background-color: #649dd3;
   --text-color: #b6d5e1;
   --good-color: #66b033;
   --fair-color: #fffe34;
@@ -24,6 +26,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: content-box;
 }
 
 code {
@@ -39,13 +42,15 @@ code {
 .main-container {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
+  background-color: var(--background-color);
 }
 
 .nav-continer {
   display: flex;
   flex-direction: column;
   position: fixed;
-  width: 100vw;
+  width: 100%;
   padding: 0.5rem;
   background-color: var(--primary-color);
 }
@@ -56,36 +61,31 @@ code {
 
 .key-map {
   display: flex;
-  width: 100vw;
   justify-content: space-around;
   padding: 0.5rem;
   height: 2rem;
 }
 
 #Africa {
-  margin-top: 6rem;
+  margin-top: 7rem;
 }
 
 .continent-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   background-color: var(--primary-color);
   color: var(--text-color);
   border: none;
-  width: 100vw;
+  border-radius: 1rem;
+  width: 70%;
   height: 20vh;
+  margin: auto;
 }
 
 .continent-img {
   display: flex;
   width: 30%;
-}
-
-.info-container {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
 }
 
 .continent-name,
@@ -96,47 +96,75 @@ code {
 .countries-container {
   display: none;
   flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
 }
 
 .km {
   font-weight: 700;
   padding: 0.1rem;
+  border: none;
   border-radius: 0.2rem;
   width: 10%;
+  text-transform: uppercase;
+}
+
+.radio {
+  appearance: none;
 }
 
 .country-btn {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
   border: none;
+  border-radius: 1rem;
   outline: none;
-  font-size: 2rem;
-  font-weight: 700;
-  width: 100vw;
-  height: 4rem;
+  width: 50vw;
+  margin: auto;
+  background-color: var(--secondary-color);
 }
 
+.good,
+.fair,
+.moderate,
+.poor,
+.verypoor {
+  height: 100%;
+  border-radius: 1rem;
+  flex: 1;
+}
+.nav-good,
 .good {
   background-color: var(--good-color);
-  margin: 0;
 }
 
+.nav-fair,
 .fair {
   background-color: var(--fair-color);
-  margin: 0;
 }
 
+.nav-moderate,
 .moderate {
   background-color: var(--moderate-color);
-  margin: 0;
 }
 
+.nav-poor,
 .poor {
   background-color: var(--poor-color);
-  margin: 0;
 }
 
+.nav-verypoor,
 .verypoor {
   background-color: var(--verypoor-color);
-  margin: 0;
+}
+
+.quality {
+  text-transform: uppercase;
+}
+
+.country-title {
+  flex: 2;
 }
 
 .country-container {
@@ -169,6 +197,11 @@ code {
 
 .country-name {
   margin: 3rem 0;
+}
+
+.country-flag {
+  flex: 1;
+  width: 3rem;
 }
 
 .components {

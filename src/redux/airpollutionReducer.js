@@ -10,7 +10,7 @@ const fetchAir = async (coor) => {
   return airPollution.data.list[0];
 };
 
-const fetchContinents = async () => {
+export const fetchContinents = async () => {
   const asyncRes = await Promise.all(continentArr.map(async (i) => {
     const continentApi = await axios.get(`https://restcountries.com/v2/region/${i}`);
     const items = await Promise.all(continentApi.data.map(async (item) => {
@@ -33,12 +33,13 @@ const continentSlice = createSlice({
   initialState: { continents: [] },
   reducers: {
     fetchStorage: (state) => {
-      const storeData = JSON.parse(localStorage.getItem('continentAirPollution'));
+      const data = JSON.parse(localStorage.getItem('continentAirPollution'));
       return {
         ...state,
-        continents: storeData,
+        continents: data,
       };
     },
+    filterUIstore: (state, action) => ({ ...state, continents: action.payload }),
   },
   extraReducers: (builder) => {
     builder.addCase(loaded.fulfilled, (state, action) => {
@@ -52,6 +53,7 @@ const continentSlice = createSlice({
             components: key.components,
             aqi: key.main.aqi,
             id: uuidv4(),
+            flag: key.flags.png,
           };
           data.push(country);
           return data;
@@ -69,5 +71,5 @@ const continentSlice = createSlice({
   },
 });
 
-export const { fetchStorage } = continentSlice.actions;
+export const { fetchStorage, filterUIstore } = continentSlice.actions;
 export default continentSlice.reducer;

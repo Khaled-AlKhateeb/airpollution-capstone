@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loaded, fetchStorage } from '../redux/airpollutionReducer';
+import { loaded, fetchStorage, filterUIstore } from '../redux/airpollutionReducer';
 import Continent from './continent';
 import Countries from './countries';
 import Country from './country';
 
 function Home() {
+  const filteredData = [];
   const dispatch = useDispatch();
-  if (!localStorage.continentAirPollution) {
-    dispatch(loaded());
-  } else {
-    dispatch(fetchStorage());
-  }
+  useEffect(() => {
+    if (!localStorage.continentAirPollution) {
+      dispatch(loaded());
+    } else {
+      dispatch(fetchStorage());
+    }
+  }, []);
   const continents = useSelector((state) => state.continent.continents);
   const handleClick = (name) => {
     const element = document.getElementById(name);
@@ -45,6 +48,16 @@ function Home() {
     root.style.overflow = 'visible';
   };
 
+  const filterUI = (aqi) => {
+    const newData = JSON.parse(localStorage.getItem('continentAirPollution'));
+    newData.map((obj) => {
+      const data = obj.data.filter((item) => item.aqi === aqi);
+      filteredData.push({ continent: obj.continent, data });
+      return filteredData;
+    });
+    dispatch(filterUIstore(filteredData));
+  };
+
   const renderSwitch = (param) => {
     switch (param) {
       case 1:
@@ -67,11 +80,11 @@ function Home() {
       <div className="nav-continer">
         <h1 className="nav-title">Air Pollution App</h1>
         <div className="key-map">
-          <div className="km good">good</div>
-          <div className="km fair">fair</div>
-          <div className="km moderate">moderate</div>
-          <div className="km poor">poor</div>
-          <div className="km verypoor">verypoor</div>
+          <button type="button" className="km nav-good" onClick={() => { filterUI(1); }}>good</button>
+          <button type="button" className="km nav-fair" onClick={() => { filterUI(2); }}>fair</button>
+          <button type="button" className="km nav-moderate" onClick={() => { filterUI(3); }}>moderate</button>
+          <button type="button" className="km nav-poor" onClick={() => { filterUI(4); }}>poor</button>
+          <button type="button" className="km nav-verypoor" onClick={() => { filterUI(5); }}>very poor</button>
         </div>
       </div>
       {continents.map((con) => (
@@ -90,6 +103,7 @@ function Home() {
                   countryName={area.name}
                   aqi={() => renderSwitch(area.aqi)}
                   onclick={() => { handleItem(area.id); }}
+                  image={area.flag}
                 />
                 <Country
                   countryName={area.name}

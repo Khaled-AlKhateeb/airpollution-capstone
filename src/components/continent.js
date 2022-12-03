@@ -7,9 +7,7 @@ const Continent = (props) => {
     <div>
       <button className="continent-container" type="button" onClick={event}>
         <img className="continent-img" src={`${icon}.png`} alt={name} />
-        <div className="info-container">
-          <h1 className="continent-name">{name}</h1>
-        </div>
+        <h1 className="continent-name">{name}</h1>
       </button>
       <div />
     </div>
