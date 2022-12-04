@@ -27,6 +27,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: content-box;
+  margin: 0;
 }
 
 code {
@@ -98,7 +99,7 @@ code {
   display: none;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 .km {
@@ -146,9 +147,7 @@ code {
   display: flex;
   gap: 0.3rem;
   align-items: center;
-  border: none;
   border-radius: 1rem;
-  outline: none;
   width: 50vw;
   margin: auto;
   background-color: var(--primary-color);

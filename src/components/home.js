@@ -81,14 +81,13 @@ function Home() {
           </div>
           <div className="countries-container" id={`${con.continent}-continent`}>
             {con.data.map((area) => (
-              <div key={Math.random()}>
-                <Countries
-                  countryName={area.name}
-                  regionName={area.region}
-                  aqi={() => renderSwitch(area.aqi)}
-                  image={area.flag}
-                />
-              </div>
+              <Countries
+                key={Math.random()}
+                countryName={area.name}
+                regionName={area.region}
+                aqi={() => renderSwitch(area.aqi)}
+                image={area.flag}
+              />
             ))}
           </div>
         </div>
