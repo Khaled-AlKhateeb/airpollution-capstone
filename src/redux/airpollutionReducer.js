@@ -6,7 +6,7 @@ const continentArr = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 const allItems = [];
 
 const fetchAir = async (coor) => {
-  const airPollution = await axios.get(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${coor.latlng[0]}&lon=${coor.latlng[1]}&appid=483a591d9d7d57de22ec2147fb88a5ce`);
+  const airPollution = await axios.get(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${coor.latlng[0]}&lon=${coor.latlng[1]}&appid=483a591d9d7d57de22ec2147fb88a5ce`);
   return airPollution.data.list[0];
 };
 
