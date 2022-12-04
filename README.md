@@ -57,7 +57,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://khaled-alkhateeb.github.io/airpollution-capstone/)
+- [Live Demo Link](https://airpollution-capstone.vercel.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
