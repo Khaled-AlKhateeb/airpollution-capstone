@@ -80,7 +80,7 @@ body {
 
 .continent-img {
   display: flex;
-  scale: 140%;
+  scale: 1.4;
   width: 50%;
 }
 
