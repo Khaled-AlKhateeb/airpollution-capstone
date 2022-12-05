@@ -15,7 +15,7 @@ const Countries = (props) => {
       <h1 className="country-title">{countryName}</h1>
       <img src={image} alt={countryName} className="country-flag" />
       <div className={aqi()}>
-        <h4>Air Quality</h4>
+        <h4 className="quality">Air Quality</h4>
         <h3 className="quality">{aqi()}</h3>
       </div>
       <Link className="link" to={`/${regionName}/${countryName}`}>

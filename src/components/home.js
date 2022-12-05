@@ -71,7 +71,7 @@ function Home() {
         </div>
       </div>
       {continents.map((con) => (
-        <div key={Math.random()} id={con.continent}>
+        <div key={Math.random()} id={con.continent} className="continent">
           <div className="continent-container">
             <Continent
               name={con.continent}

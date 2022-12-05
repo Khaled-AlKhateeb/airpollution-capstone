@@ -18,59 +18,59 @@ const Country = () => {
       <div className="components">
         <p className="component">
           CO:&nbsp;
+          <br />
           {country[0].components.co}
           &nbsp;
-          μg/m
-          <sup>3</sup>
+          μg/m3
         </p>
         <p className="component">
           NO:&nbsp;
+          <br />
           {country[0].components.no}
           &nbsp;
-          μg/m
-          <sup>3</sup>
+          μg/m3
         </p>
         <p className="component">
           NO2:&nbsp;
+          <br />
           {country[0].components.no2}
           &nbsp;
-          μg/m
-          <sup>3</sup>
+          μg/m3
         </p>
         <p className="component">
           O3:&nbsp;
+          <br />
           {country[0].components.o3}
           &nbsp;
-          μg/m
-          <sup>3</sup>
+          μg/m3
         </p>
         <p className="component">
           SO2:&nbsp;
+          <br />
           {country[0].components.so2}
           &nbsp;
-          μg/m
-          <sup>3</sup>
+          μg/m3
         </p>
         <p className="component">
           PM2_5:&nbsp;
+          <br />
           {country[0].components.pm2_5}
           &nbsp;
-          μg/m
-          <sup>3</sup>
+          μg/m3
         </p>
         <p className="component">
           PM10:&nbsp;
+          <br />
           {country[0].components.pm10}
           &nbsp;
-          μg/m
-          <sup>3</sup>
+          μg/m3
         </p>
         <p className="component">
           NH3:&nbsp;
+          <br />
           {country[0].components.nh3}
           &nbsp;
-          μg/m
-          <sup>3</sup>
+          μg/m3
         </p>
       </div>
     </div>

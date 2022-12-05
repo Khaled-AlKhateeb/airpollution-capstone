@@ -11,63 +11,56 @@
 }
 
 body {
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
+  font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: content-box;
   margin: 0;
 }
 
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
+@font-face {
+  font-family: "gill sans";
+  src: url("https://fonts.cdnfonts.com/css/gill-sans-2");
 }
 
 .main-container {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
   background-color: var(--background-color);
 }
 
 .nav-continer {
   display: flex;
   flex-direction: column;
+  gap: 0.1rem;
   position: fixed;
   width: 100%;
-  padding: 0.5rem;
   background-color: var(--primary-color);
+  z-index: 1;
 }
 
 .nav-title {
+  font-family: 'gill sans', sans-serif;
+  font-weight: 900;
   margin: 0;
+}
+
+#Africa {
+  margin-top: 6rem;
 }
 
 .key-map {
   display: flex;
   justify-content: space-around;
+  border: none;
+  border-radius: 1rem;
+  width: 100%;
+  font-weight: 600;
+  margin-inline: auto;
+  text-transform: uppercase;
+  text-align: center;
   padding: 0.5rem;
   height: 2rem;
-}
-
-#Africa {
-  margin-top: 7rem;
 }
 
 .continent-container {
@@ -77,28 +70,32 @@ code {
   background-color: var(--primary-color);
   color: var(--text-color);
   border: none;
-  border-radius: 1rem;
-  width: 70%;
-  height: 20vh;
   cursor: pointer;
   margin: auto;
 }
 
+.continent:nth-child(odd) {
+  background-color: var(--primary-color);
+}
+
 .continent-img {
   display: flex;
-  width: 30%;
+  scale: 140%;
+  width: 50%;
 }
 
 .continent-name,
 .continent-quality {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
   margin: 0;
 }
 
 .countries-container {
   display: none;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 1rem 0;
+  width: 100%;
 }
 
 .km {
@@ -107,12 +104,8 @@ code {
   padding: 0.1rem;
   border: none;
   border-radius: 0.2rem;
-  width: 10%;
+  width: 100%;
   text-transform: uppercase;
-}
-
-.radio {
-  appearance: none;
 }
 
 .link {
@@ -120,10 +113,10 @@ code {
 }
 
 .link-btn {
-  color: var(--text-color);
+  color: var(--background-color);
   font-size: 1.2rem;
   font-weight: 500;
-  background-color: var(--background-color);
+  background-color: var(--text-color);
   cursor: pointer;
   border-radius: 1rem;
   height: 100%;
@@ -132,24 +125,29 @@ code {
 
 .flag-container {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  width: 50vw;
+  width: 100%;
   margin: 2rem auto;
 }
 
 .country-image {
-  max-width: 20rem;
+  align-self: center;
+  width: 10rem;
   border-radius: 2rem;
 }
 
 .country-btn {
   display: flex;
+  flex-direction: column;
+  padding: 0.2rem;
   gap: 0.3rem;
   align-items: center;
-  border-radius: 1rem;
-  width: 50vw;
-  margin: auto;
   background-color: var(--primary-color);
+}
+
+.country-btn:nth-child(odd) {
+  background-color: var(--background-color);
 }
 
 .good,
@@ -160,6 +158,11 @@ code {
   height: 100%;
   border-radius: 1rem;
   flex: 1;
+  padding: 0.4rem;
+}
+
+.nav-select {
+  background-color: var(--background-color);
 }
 
 .nav-good,
@@ -189,10 +192,17 @@ code {
 
 .quality {
   text-transform: uppercase;
+  margin: 0;
 }
 
 .country-title {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--text-color);
+  text-transform: uppercase;
   flex: 2;
+  margin: 0;
 }
 
 .country-container {
@@ -223,25 +233,31 @@ code {
 }
 
 .country-name {
-  font-size: 4rem;
-  margin: 3rem 0;
+  font-size: 2rem;
+  width: 100%;
+  margin: 0;
 }
 
 .country-flag {
   flex: 1;
-  width: 2.5rem;
   border-radius: 1rem;
+  width: 9rem;
 }
 
 .components {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 50% 50%;
   gap: 0.5rem;
-  width: 40%;
+  width: 100%;
   margin: 0 auto;
 }
 
 .component {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  width: 40%;
   padding: 0.5rem 2rem;
   text-align: start;
   background-color: var(--text-color);
