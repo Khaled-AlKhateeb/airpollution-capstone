@@ -1,13 +1,278 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --primary-color: #fb5092;
+  --secondary-color: #0a5d86;
+  --background-color: #b13968;
+  --text-color: #b6d5e1;
+  --good-color: #66b033;
+  --fair-color: #fffe34;
+  --moderate-color: #fb9902;
+  --poor-color: #fd5308;
+  --verypoor-color: #fe2712;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: content-box;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "gill sans";
+  src: url("https://fonts.cdnfonts.com/css/gill-sans-2");
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+}
+
+.nav-continer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  position: fixed;
+  width: 100%;
+  background-color: var(--primary-color);
+  z-index: 1;
+}
+
+.nav-title {
+  font-family: 'gill sans', sans-serif;
+  font-weight: 900;
+  margin: 0;
+}
+
+#Africa {
+  margin-top: 6rem;
+}
+
+.key-map {
+  display: flex;
+  justify-content: space-around;
+  border: none;
+  border-radius: 1rem;
+  width: 100%;
+  font-weight: 600;
+  margin-inline: auto;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.5rem;
+  height: 2rem;
+}
+
+.continent-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  margin: auto;
+}
+
+.continent:nth-child(odd) {
+  background-color: var(--primary-color);
+}
+
+.continent-img {
+  display: flex;
+  scale: 1.4;
+  width: 50%;
+}
+
+.continent-name,
+.continent-quality {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.countries-container {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+}
+
+.km {
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0.1rem;
+  border: none;
+  border-radius: 0.2rem;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link-btn {
+  color: var(--background-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: var(--text-color);
+  cursor: pointer;
+  border-radius: 1rem;
+  height: 100%;
+  padding: 0.5rem;
+}
+
+.flag-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.country-image {
+  align-self: center;
+  width: 10rem;
+  border-radius: 2rem;
+}
+
+.country-btn {
+  display: flex;
+  flex-direction: column;
+  padding: 0.2rem;
+  gap: 0.3rem;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+
+.country-btn:nth-child(odd) {
+  background-color: var(--background-color);
+}
+
+.good,
+.fair,
+.moderate,
+.poor,
+.verypoor {
+  height: 100%;
+  border-radius: 1rem;
+  flex: 1;
+  padding: 0.4rem;
+}
+
+.nav-select {
+  background-color: var(--background-color);
+}
+
+.nav-good,
+.good {
+  background-color: var(--good-color);
+}
+
+.nav-fair,
+.fair {
+  background-color: var(--fair-color);
+}
+
+.nav-moderate,
+.moderate {
+  background-color: var(--moderate-color);
+}
+
+.nav-poor,
+.poor {
+  background-color: var(--poor-color);
+}
+
+.nav-verypoor,
+.verypoor {
+  background-color: var(--verypoor-color);
+}
+
+.quality {
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.country-title {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--text-color);
+  text-transform: uppercase;
+  flex: 2;
+  margin: 0;
+}
+
+.country-container {
+  display: none;
+}
+
+.info-country {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.info-country::after {
+  content: "";
+  position: absolute;
+}
+
+.show {
+  visibility: visible;
+  -webkit-animation: fadein 1s;
+  animation: fadeIn 1s;
+}
+
+.country-name {
+  font-size: 2rem;
+  width: 100%;
+  margin: 0;
+}
+
+.country-flag {
+  flex: 1;
+  border-radius: 1rem;
+  width: 9rem;
+}
+
+.components {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 50% 50%;
+  gap: 0.5rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.component {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  width: 40%;
+  padding: 0.5rem 2rem;
+  text-align: start;
+  background-color: var(--text-color);
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.close-btn {
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  position: absolute;
 }
